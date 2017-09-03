@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>division build support</title>
+
+    <!-- jquery -->
+    <script src="./lib/jquery/jquery-3.2.1.js"></script>
+
+    <!-- hifive -->
+    <script src="./lib/hifive/ejs-h5mod.js"></script>
+    <script src="./lib/hifive/h5.dev.js"></script>
+    <link href="./lib/hifive/h5.css" rel="stylesheet" />
+
+    <!-- bootstrap -->
+    <script src="./lib/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <link href="./lib/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="./js/PageController.js"></script>
+
+    <!-- css -->
+    <link href="./css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- 画面タイトル -->
+    <div class="headerContainer">division 1.7</div>
+
+    <div class="bodyContainer">
+        <!-- 防具タレント -->
+        <div class="armorTalentContainer" data-h5-loop-context="armorItems">
+            <div class="selectTalentContainer">
+                <div class="partName" data-h5-bind="partName"></div>
+                <select class="armorTalentList" data-h5-loop-context="data">
+                    <option class="item" data-h5-bind="name; attr(desc):desc; attr(data-set-name):setName;"></option>
+                </select>
+                <div class="talentDescArea"></div>
+            </div>
+        </div>
+
+        <!-- セット効果 -->
+        <div class="setBounusContainer">
+            <div class="setBounusLabel">set bounus</div>
+            <ul data-h5-loop-context="setBounusList">
+                <li>
+                    <span data-h5-bind="setNum"></span><br />
+                    <span data-h5-bind="setDesc"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
